@@ -9,7 +9,18 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "eslint",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "wztlink1013",
+      "name": "尼采般地抒情",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50895943?v=4",
+      "profile": "https://www.wztlink1013.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
   "linkToUsage": true
 }
