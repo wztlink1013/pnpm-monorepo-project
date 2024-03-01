@@ -16,6 +16,9 @@
     "test": "pnpm run --filter ./packages/components test",
     "coverage": "pnpm run --filter ./packages/components vitest run --coverage"
   },
+  "dependencies": {
+    "all-contributors-cli": "^6.26.1"
+  },
   "devDependencies": {
     "@types/gulp": "^4.0.9",
     "@types/gulp-autoprefixer": "^0.0.33",
