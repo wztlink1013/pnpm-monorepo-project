@@ -1,5 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
@@ -13,6 +13,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://www.wztlink1013.com/"><img src="https://avatars.githubusercontent.com/u/50895943?v=4?s=100" width="100px;" alt="尼采般地抒情"/><br /><sub><b>尼采般地抒情</b></sub></a><br /><a href="https://github.com/wztlink1013/kittyui/commits?author=wztlink1013" title="Code">💻</a> <a href="https://github.com/wztlink1013/kittyui/commits?author=wztlink1013" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/test"><img src="https://avatars.githubusercontent.com/u/383316?v=4?s=100" width="100px;" alt="test"/><br /><sub><b>test</b></sub></a><br /><a href="https://github.com/wztlink1013/kittyui/commits?author=test" title="Tests">⚠️</a> <a href="https://github.com/wztlink1013/kittyui/commits?author=test" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>
