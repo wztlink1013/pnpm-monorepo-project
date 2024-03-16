@@ -1,6 +1,4 @@
-
-
-Icon组件是一个组件库中不可或缺的组件之一，本篇文章将带大家实现一个Icon组件。如果你想了解完整的组件库搭建，你可以先看[https://juejin.cn/post/7117886038126624805](使用Vite和TypeScript带你从零打造一个属于自己的Vue3组件库)。
+Icon 组件是一个组件库中不可或缺的组件之一，本篇文章将带大家实现一个 Icon 组件。如果你想了解完整的组件库搭建，你可以先看[https://juejin.cn/post/7117886038126624805](使用Vite和TypeScript带你从零打造一个属于自己的Vue3组件库)。
 
 ## 引入字体图标
 
@@ -8,7 +6,7 @@ Icon组件是一个组件库中不可或缺的组件之一，本篇文章将带�
 
 ![1658328292362.jpg](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6af7b14224254806bfdc2ceb6bdea709~tplv-k3u1fbpfcp-watermark.image?)
 
-我们将前缀改为我们组件库的名字(这里可以随便命名)，后面我们的字体图标class前缀就是这里定义的。
+我们将前缀改为我们组件库的名字(这里可以随便命名)，后面我们的字体图标 class 前缀就是这里定义的。
 
 项目建好之后我们去 素材库下的图标库找一些自己喜欢的图标添加到购物车，然后再将我们购物车的图标添加至我们的项目中
 
@@ -16,25 +14,22 @@ Icon组件是一个组件库中不可或缺的组件之一，本篇文章将带�
 
 ![1658328793150.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b68907defa14ff68f2513fa40dbc2dd~tplv-k3u1fbpfcp-watermark.image?)
 
-再回到我们的项目，将图标下载到我们本地，这里我们选择symbol方式引用
-
-
+再回到我们的项目，将图标下载到我们本地，这里我们选择 symbol 方式引用
 
 ![1658328912398.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/12c06199b2a54e17bc6e1d39448125cc~tplv-k3u1fbpfcp-watermark.image?)
 
+然后解压，这里我们只需要这些文件中的 iconfont.js，我们将其复制放到我们的 Icon 项目下面，这里我将它放在 Icon/font 下。
 
-然后解压，这里我们只需要这些文件中的iconfont.js，我们将其复制放到我们的Icon项目下面，这里我将它放在Icon/font下。
+## Icon 组件中使用图标
 
-## Icon组件中使用图标
+我们使用的是 symbol 方式引用，所以是使用是非常方便的。这是一种全新的使用方式，应该说这才是未来的主流，也是目前推荐的用法，它有一下特点
 
-我们使用的是symbol方式引用，所以是使用是非常方便的。这是一种全新的使用方式，应该说这才是未来的主流，也是目前推荐的用法，它有一下特点
+- 支持多色图标了，不再受单色限制。
+- 通过一些技巧，支持像字体那样，通过 font-size,color 来调整样式。
+- 兼容性较差，支持 ie9+,及现代浏览器。
+- 浏览器渲染 svg 的性能一般，还不如 png。
 
-* 支持多色图标了，不再受单色限制。
-* 通过一些技巧，支持像字体那样，通过font-size,color来调整样式。
-* 兼容性较差，支持 ie9+,及现代浏览器。
-* 浏览器渲染svg的性能一般，还不如png。
-
-首先我们要先引入通用css样式
+首先我们要先引入通用 css 样式
 
 ```
 .icon {
@@ -45,7 +40,7 @@ Icon组件是一个组件库中不可或缺的组件之一，本篇文章将带�
     }
 ```
 
-这里我们将其放在了Icon/style/index.less中
+这里我们将其放在了 Icon/style/index.less 中
 
 然后在组件中使用：
 
@@ -57,9 +52,9 @@ Icon组件是一个组件库中不可或缺的组件之一，本篇文章将带�
 
 ## 动态渲染
 
-因为我们的Icon需要支持传入不同name展示不同图标，所以我们需要将Icon组件完善一下
+因为我们的 Icon 需要支持传入不同 name 展示不同图标，所以我们需要将 Icon 组件完善一下
 
-首先在Icon/types中定义我们的props类型
+首先在 Icon/types 中定义我们的 props 类型
 
 ```
 import { ExtractPropTypes } from 'vue'
@@ -74,7 +69,7 @@ export type IconProps = ExtractPropTypes<typeof iconProps>
 
 ```
 
-然后将icon.vue修改为
+然后将 icon.vue 修改为
 
 ```
 <template>
@@ -102,11 +97,11 @@ export type IconProps = ExtractPropTypes<typeof iconProps>
  </script>
 ```
 
-此时我们就能根据不同name展示不同图标了
+此时我们就能根据不同 name 展示不同图标了
 
-## 组件引入Icon
+## 组件引入 Icon
 
-引入一个Icon就很简单了，只需要传入一个name即可,比如我们在example/App.vue中使用如下
+引入一个 Icon 就很简单了，只需要传入一个 name 即可,比如我们在 example/App.vue 中使用如下
 
 ```
 <template>
@@ -121,7 +116,7 @@ export type IconProps = ExtractPropTypes<typeof iconProps>
     </div>
 </template>
 <script lang="ts" setup>
-import { Icon } from 'kitty-ui'
+import { Icon } from 'pnpm-monorepo-project-kitty-ui'
 
 </script>
 <style lang="less">
@@ -140,7 +135,7 @@ import { Icon } from 'kitty-ui'
 
 ## 徽标提示
 
-我们可以设置dot属性后，让我们图标右上角展示一个小红点；设置badge属性后，会在图标右上角展示相应的徽标，所以我们先给我组件加两个属性：dot，badge。types.ts如下
+我们可以设置 dot 属性后，让我们图标右上角展示一个小红点；设置 badge 属性后，会在图标右上角展示相应的徽标，所以我们先给我组件加两个属性：dot，badge。types.ts 如下
 
 ```
 
@@ -160,7 +155,7 @@ export type IconProps = ExtractPropTypes<typeof iconProps>
 
 ```
 
-然后我们根据这两个属性来展示我们不同的徽标，icon.vue修改如下
+然后我们根据这两个属性来展示我们不同的徽标，icon.vue 修改如下
 
 ```
 <template>
@@ -200,7 +195,7 @@ export type IconProps = ExtractPropTypes<typeof iconProps>
  </script>
 ```
 
-组件通过dot和badge来赋予徽标不同class，对应类名样式如下
+组件通过 dot 和 badge 来赋予徽标不同 class，对应类名样式如下
 
 ```
 .kitty-icon {
@@ -233,7 +228,7 @@ export type IconProps = ExtractPropTypes<typeof iconProps>
 }
 ```
 
-App.vue中使用 
+App.vue 中使用
 
 ```
 <template>
@@ -244,7 +239,7 @@ App.vue中使用
     </div>
 </template>
 <script lang="ts" setup>
-import { Icon } from 'kitty-ui'
+import { Icon } from 'pnpm-monorepo-project-kitty-ui'
 
 </script>
 <style lang="less">
@@ -260,12 +255,11 @@ import { Icon } from 'kitty-ui'
 
 最终展示效果
 
-
 ![1658333336031.jpg](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3246bf1e096b4ec4ac29070a533241e7~tplv-k3u1fbpfcp-watermark.image?)
 
 ## 图标颜色
 
-Icon的color属性用来设置图标的颜色。这个比较好实现，这里直接通过style赋予图标颜色
+Icon 的 color 属性用来设置图标的颜色。这个比较好实现，这里直接通过 style 赋予图标颜色
 
 ```
 //icon.vue
@@ -297,7 +291,7 @@ Icon的color属性用来设置图标的颜色。这个比较好实现，这里�
  </script>
 ```
 
-App.vue中使用 
+App.vue 中使用
 
 ```
 <template>
@@ -309,7 +303,7 @@ App.vue中使用
     </div>
 </template>
 <script lang="ts" setup>
-import { Icon } from 'kitty-ui'
+import { Icon } from 'pnpm-monorepo-project-kitty-ui'
 
 </script>
 <style lang="less">
@@ -328,4 +322,4 @@ import { Icon } from 'kitty-ui'
 
 ## 最后
 
-到这里一个Icon组件基本也就开发完了，如果你想了解更多组件的实现，你可以关注
+到这里一个 Icon 组件基本也就开发完了，如果你想了解更多组件的实现，你可以关注

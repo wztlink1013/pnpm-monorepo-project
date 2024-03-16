@@ -1,5 +1,5 @@
 {
-  "name": "kitty-ui",
+  "name": "pnpm-monorepo-project-kitty-ui",
   "version": "3.0.11",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -8,11 +8,11 @@
     "lib"
   ],
   "keywords": [
-    "kitty-ui",
+    "pnpm-monorepo-project-kitty-ui",
     "vue3组件库"
   ],
   "dependencies": {
-    "@kitty-ui/utils": "2.0.1"
+    "@pnpm-monorepo-project-kitty-ui/utils": "2.0.1"
   },
   "author": "小月",
   "license": "MIT",

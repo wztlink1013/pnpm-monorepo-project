@@ -1,5 +1,5 @@
 {
-  "name": "kitty-ui",
+  "name": "pnpm-monorepo-project-kitty-ui",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -12,7 +12,7 @@
     "lib"
   ],
   "keywords": [
-    "kitty-ui",
+    "pnpm-monorepo-project-kitty-ui",
     "vue3组件库"
   ],
   "author": "小月",
@@ -20,6 +20,6 @@
   "description": "",
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@kitty-ui/utils": "workspace:2.0.1"
+    "@pnpm-monorepo-project-kitty-ui/utils": "workspace:2.0.1"
   }
 }

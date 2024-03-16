@@ -1,5 +1,5 @@
 {
-  "name": "kittyui",
+  "name": "pnpm-monorepo-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,12 +7,9 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "exm:dev": "pnpm run --filter ./examples dev",
     "build:kitty": "gulp -f packages/components/script/build/gulpfile.ts",
     "publish:kitty": "gulp -f packages/components/script/publish/gulpfile.ts",
-    "docs:dev": "pnpm run --filter ./site docs:dev",
-    "docs:build": "pnpm run --filter ./site docs:build",
-    "docs:serve": "pnpm run --filter ./site docs:serve",
-    "exm:dev": "pnpm run --filter ./examples dev",
     "test": "pnpm run --filter ./packages/components test",
     "coverage": "pnpm run --filter ./packages/components vitest run --coverage"
   },

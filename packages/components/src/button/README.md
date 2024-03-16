@@ -1,20 +1,19 @@
-button组件几乎是每个组件库都有的；其实实现一个button组件是很简单的。本篇文章将带你一步一步的实现一个button组件。如果你想了解完整的组件库搭建，你可以先看[使用Vite和TypeScript带你从零打造一个属于自己的Vue3组件库](https://juejin.cn/post/7117886038126624805)，这篇文章有详细介绍。当然如果你只想知道一个button组件如何开发出来的，只看这篇也就够了。
+button 组件几乎是每个组件库都有的；其实实现一个 button 组件是很简单的。本篇文章将带你一步一步的实现一个 button 组件。如果你想了解完整的组件库搭建，你可以先看[使用 Vite 和 TypeScript 带你从零打造一个属于自己的 Vue3 组件库](https://juejin.cn/post/7117886038126624805)，这篇文章有详细介绍。当然如果你只想知道一个 button 组件如何开发出来的，只看这篇也就够了。
 
-首先我们先看下我们这个button组件要实现的功能
+首先我们先看下我们这个 button 组件要实现的功能
 
-* 使用type，plain属性来定义按钮基本样式
-* round，size控制按钮形状大小
-* 通过disabled来控制按钮是否可点击
-* 支持icon加入图标增强辨识度
+- 使用 type，plain 属性来定义按钮基本样式
+- round，size 控制按钮形状大小
+- 通过 disabled 来控制按钮是否可点击
+- 支持 icon 加入图标增强辨识度
 
+## type 实现
 
-## type实现
+我们的 type 可以传入的值可以是 primary, success, info，warning, danger 分别展示不同按钮颜色,type 传入 text 显示文字按钮(没有边框和背景色的按钮)
 
-我们的type可以传入的值可以是primary, success, info，warning, danger分别展示不同按钮颜色,type传入text显示文字按钮(没有边框和背景色的按钮)
+这里只展示了一个 primary 的样式，因为其它值的样式实现是一样的。需要的话可以到[button 组件样式](https://gitee.com/geeksdidi/kittyui/blob/master/packages/components/src/button/style/index.less)进行查看。
 
-这里只展示了一个primary的样式，因为其它值的样式实现是一样的。需要的话可以到[button组件样式](https://gitee.com/geeksdidi/kittyui/blob/master/packages/components/src/button/style/index.less)进行查看。
-
-所以在button/types.ts文件中我们定义一下type的类型：
+所以在 button/types.ts 文件中我们定义一下 type 的类型：
 
 ```
 
@@ -36,8 +35,7 @@ export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 
 ```
 
-接下来在button.vue中实现传入不同值赋予不同类名，从而实现显示不同效果。
-
+接下来在 button.vue 中实现传入不同值赋予不同类名，从而实现显示不同效果。
 
 ```
 <template>
@@ -54,7 +52,7 @@ export default defineComponent({
     name: 'k-button',
     props: buttonProps,
     setup(props) {
-        const styleClass = computed(() => { 
+        const styleClass = computed(() => {
             return {
                 [`k-button--${props.type}`]: props.type
             }
@@ -69,7 +67,7 @@ export default defineComponent({
 
 ```
 
-这样一来传入primary组件就会有个类名k-button--primary吗，传入其它值也一样。然后我们就可以给它们写样式了。进入style/index.less:
+这样一来传入 primary 组件就会有个类名 k-button--primary 吗，传入其它值也一样。然后我们就可以给它们写样式了。进入 style/index.less:
 
 ```
 .k-button {
@@ -120,10 +118,9 @@ export default defineComponent({
 }
 ```
 
+## plain(朴素按钮)和 round(圆角按钮)
 
-## plain(朴素按钮)和round(圆角按钮)
-
-我们可以通过传入plain和round来决定这个按钮是否为朴素按钮和圆角按钮，很显然它们是个布尔类型
+我们可以通过传入 plain 和 round 来决定这个按钮是否为朴素按钮和圆角按钮，很显然它们是个布尔类型
 
 ```
 //types.ts
@@ -145,7 +142,7 @@ export const buttonProps = {
 
 ```
 
-然后在button.vue定义我们的styleClass
+然后在 button.vue 定义我们的 styleClass
 
 ```
 //button.vue
@@ -159,7 +156,7 @@ const styleClass = computed(() => {
         })
 ```
 
-最后在style/index.less写上我们的样式
+最后在 style/index.less 写上我们的样式
 
 ```
 
@@ -186,8 +183,7 @@ const styleClass = computed(() => {
 
 ## 禁用按钮
 
-同样的，在types.ts定义disabled的类型
-
+同样的，在 types.ts 定义 disabled 的类型
 
 ```
 //types.ts
@@ -211,7 +207,7 @@ export const buttonProps = {
 
 ```
 
-然后在button.vue定义我们的styleClass
+然后在 button.vue 定义我们的 styleClass
 
 ```
 //button.vue
@@ -259,9 +255,9 @@ const styleClass = computed(() => {
 
 ## size
 
-通过size我们可以控制按钮的大小，组件接收的size值有：midium, small, mini。实现方式和上面差不多，这里就直接展示部分代码了
+通过 size 我们可以控制按钮的大小，组件接收的 size 值有：midium, small, mini。实现方式和上面差不多，这里就直接展示部分代码了
 
-* types.ts
+- types.ts
 
 ```
 //types.ts
@@ -286,7 +282,7 @@ export const buttonProps = {
 
 ```
 
-* button.vue
+- button.vue
 
 ```
 //button.vue
@@ -302,7 +298,7 @@ const styleClass = computed(() => {
         })
 ```
 
-* style/index.less
+- style/index.less
 
 ```
 //index.less
@@ -380,7 +376,7 @@ const styleClass = computed(() => {
     </div>
 </template>
 <script lang="ts" setup>
-import { Button } from 'kitty-ui'
+import { Button } from 'pnpm-monorepo-project-kitty-ui'
 </script>
 <style lang="less">
 .k-button {
@@ -389,17 +385,15 @@ import { Button } from 'kitty-ui'
 </style>
 ```
 
-启动项目我们就会在浏览器中看到我们的各式各样的button组件了
-
+启动项目我们就会在浏览器中看到我们的各式各样的 button 组件了
 
 ![1658045827629.jpg](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/853aa65f5223436281d6dc8a6b8229fb~tplv-k3u1fbpfcp-watermark.image?)
 
-
 ## 图标
 
-通过icon属性设置按钮图标，支持Icon组件里的所有图标(Icon组件下一篇文章将会详细介绍)。
+通过 icon 属性设置按钮图标，支持 Icon 组件里的所有图标(Icon 组件下一篇文章将会详细介绍)。
 
-* types.ts中设置icon类型
+- types.ts 中设置 icon 类型
 
 ```
 export const buttonProps = {
@@ -423,9 +417,9 @@ export const buttonProps = {
 }
 ```
 
-* 修改button组件
+- 修改 button 组件
 
-icon可以传入icon组件中定义的name，iconPosition可选right使图标在按钮右侧。
+icon 可以传入 icon 组件中定义的 name，iconPosition 可选 right 使图标在按钮右侧。
 
 ```
 <!-- button.vue -->
@@ -481,7 +475,7 @@ export default defineComponent({
 
 ```
 
-然后在examples/App.vue使用并查看效果
+然后在 examples/App.vue 使用并查看效果
 
 ```
 <template>
@@ -492,7 +486,7 @@ export default defineComponent({
     </div>
 </template>
 <script lang="ts" setup>
-import { Button } from 'kitty-ui'
+import { Button } from 'pnpm-monorepo-project-kitty-ui'
 
 </script>
 <style lang="less">
@@ -503,10 +497,8 @@ import { Button } from 'kitty-ui'
 
 ```
 
-
 ![1658069989903.jpg](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/27d1ecb0c0b4434aa9a62b6203e62421~tplv-k3u1fbpfcp-watermark.image?)
 
-到这里一个button组件的开发基本就结束了，看起来一个不起眼的button组件里面其实还是包含些许内容的。如果你想了解更多组件的实现的话可以关注[专栏](https://juejin.cn/column/7118932817119019015)，将不定期更新其它组件的实现。
+到这里一个 button 组件的开发基本就结束了，看起来一个不起眼的 button 组件里面其实还是包含些许内容的。如果你想了解更多组件的实现的话可以关注[专栏](https://juejin.cn/column/7118932817119019015)，将不定期更新其它组件的实现。
 
-> 如果你觉得本篇文章对你有帮助的话，动动指头点个赞吧orz，你的鼓励将会是我持续创作的动力
-
+> 如果你觉得本篇文章对你有帮助的话，动动指头点个赞吧 orz，你的鼓励将会是我持续创作的动力

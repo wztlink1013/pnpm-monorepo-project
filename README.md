@@ -26,7 +26,7 @@ pnpm run build:kitty
 
 pnpm run publish:kitty
 
-### 启动文档
+<!-- ### 启动文档
 
 pnpm run docs:dev
 
@@ -36,7 +36,7 @@ pnpm run docs:build
 
 ### 启动打包后文档服务
 
-pnpm run docs:serve
+pnpm run docs:serve -->
 
 ### 执行组件库测试
 
@@ -56,8 +56,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://www.wztlink1013.com/"><img src="https://avatars.githubusercontent.com/u/50895943?v=4?s=100" width="100px;" alt="尼采般地抒情"/><br /><sub><b>尼采般地抒情</b></sub></a><br /><a href="https://github.com/wztlink1013/kittyui/commits?author=wztlink1013" title="Code">💻</a> <a href="https://github.com/wztlink1013/kittyui/commits?author=wztlink1013" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/test"><img src="https://avatars.githubusercontent.com/u/383316?v=4?s=100" width="100px;" alt="test"/><br /><sub><b>test</b></sub></a><br /><a href="https://github.com/wztlink1013/kittyui/commits?author=test" title="Tests">⚠️</a> <a href="https://github.com/wztlink1013/kittyui/commits?author=test" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.wztlink1013.com/"><img src="https://avatars.githubusercontent.com/u/50895943?v=4?s=100" width="100px;" alt="尼采般地抒情"/><br /><sub><b>尼采般地抒情</b></sub></a><br /><a href="https://github.com/wztlink1013/pnpm-monorepo-project/commits?author=wztlink1013" title="Code">💻</a> <a href="https://github.com/wztlink1013/pnpm-monorepo-project/commits?author=wztlink1013" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/test"><img src="https://avatars.githubusercontent.com/u/383316?v=4?s=100" width="100px;" alt="test"/><br /><sub><b>test</b></sub></a><br /><a href="https://github.com/wztlink1013/pnpm-monorepo-project/commits?author=test" title="Tests">⚠️</a> <a href="https://github.com/wztlink1013/pnpm-monorepo-project/commits?author=test" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>
